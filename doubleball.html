@@ -1,0 +1,32 @@
+<!doctype>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>双色球</title>
+ </head>
+ <body>
+	<script>
+		function doubleball(){
+			var reds = []
+			while(reds.length < 6){
+				var r=parseInt(Math.random()*33+1)
+				for(var i=0;i<reds.length;i++){
+					if(r===reds[i])
+						break
+					}
+					if(reds.length==i)
+						reds.push(r)
+				}
+				//排序
+				reds.sort( function r(a,b){ return b-a } )
+				var b=parseInt(Math.random()*16+1)
+				document.write(String(reds)+'-------'+b+'<br>')
+			}
+			doubleball();
+			doubleball();
+			doubleball();
+			doubleball();
+			doubleball();
+	</script>
+ </body>
+</html>
