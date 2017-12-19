@@ -1,0 +1,24 @@
+<!doctype>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+ </head>
+ <body>
+		<script>
+		function b(){
+			var i=1
+			return function(){
+				console.log(i++)
+			}
+		}
+		var c=b()
+		c()
+		c()
+		i=2
+		c()
+		i=5
+		c()
+		</script>
+ </body>
+</html>
