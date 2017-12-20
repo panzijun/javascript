@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+ </head>
+ <body>
+  <script>
+		//Step1: 用外层函数包裹受保护的变量和内层函数
+		function outer(){
+			var i=1;
+			//Step2: 外层函数将内层函数对象返回
+			return function(){	
+				console.log(i++);
+			}
+		}
+		//Step3: 使用者调用外层函数，获得内层函数
+		var icbc=outer();
+		//icbc:function(){ console.log(i++); }
+		icbc();//1
+		icbc();//2
+
+		i=1;
+
+		icbc();//3
+		icbc();//4
+	</script>
+ </body>
+</html>
