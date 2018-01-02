@@ -1,0 +1,51 @@
+<!doctype>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>创建对象</title>
+ </head>
+ <body>
+	<script>
+
+		var lilei={
+			name:'li lei',
+			age:11,
+			intr:function(){
+				console.log( " I'm " + this.name + " , I'm " + this.age  )
+			}
+		}
+		console.log(lilei.age)
+		lilei.intr()
+		lilei.age++
+		console.log(lilei.age)
+		lilei.intr()
+
+
+
+//		添加 hmm
+		var hmm=new Object()
+			hmm.name='Han meimei',
+			hmm.age=18,
+			hmm.intr=function(){
+				console.log( " I'm " + this.name + " , I'm " + this.age  )
+			}
+		hmm.age++
+		hmm.intr()
+
+
+//		复制 lilei
+		function clone(obj){
+			var newObj={}
+			for(var key in obj){
+				newObj[key]=obj[key]
+			}
+			return newObj
+		}
+		var lileiCopy=clone(lilei)
+		
+
+		console.dir(lilei)
+		console.dir(lileiCopy)
+	</script>
+ </body>
+</html>
