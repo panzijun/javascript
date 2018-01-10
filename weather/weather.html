@@ -1,0 +1,21 @@
+<!doctype>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+ </head>
+ <body>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="http://localhost/weather.php"></script>
+	<script>
+		function doit(weather){
+			alert(`<h1>${weather}</h1>`)
+		}
+		$("#btn").click(()=>{
+			$("<script>").attr(
+				"src","http://localhost/weather.php?handler=doit"
+			).appendTo(document.body)
+		})
+	</script>
+</body>
+</html>
