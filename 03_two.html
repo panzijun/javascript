@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        svg,canvas{
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+  <h3>two.js 第三方canvas库-旋转</h3>
+  <div id="box"></div>
+  <script src="js/two.js"></script>
+  <script>
+      var box = document.getElementById("box");
+      //1:创建2d绘图对象
+      var two = new Two({
+          width:500,
+          height:400,
+          type:Two.Types.svg
+      }).appendTo(box);
+      //2：创建圆形，矩形
+      var c  = two.makeCircle(0,0,80)
+      var r  =  two.makeRectangle(200,0,100,100);
+      //3: 将二个图形作为一组
+      var g = two.makeGroup(r,c);
+      //4: 平移原点
+      g.translation.set(200,100);
+      g.rotation = 30 * Math.PI/180;
+      //5:更新
+      two.update();
+
+
+  </script>
+</body>
+</html>
