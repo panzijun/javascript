@@ -1,0 +1,112 @@
+body,li{ margin: 0; padding: 0;}
+ul{ list-style-type: none;}
+img{ border: none; vertical-align: middle;}
+.box{
+    margin: auto;
+    width: 800px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.box>ul>li{
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 4px;
+    display: inline-block;
+    perspective: 400px;
+}
+.box>ul>li>.normal{
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 2px 20px #e6ebed;
+    background-color: #ECF0F1;
+    border-radius: 4px;
+    cursor: pointer;
+    /* display: none; */
+}
+.box>ul>li>.info{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transform: rotate3d(1, 0, 0, 90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;/*指针事件*/
+}
+.box>ul>li>.info>img{ 
+    border-radius: 5px;
+}
+/**********************************体力活*******-webkit-(略)******************************/
+.in-top .info {
+    transform-origin: 50% 0%;
+    animation: in-top 300ms ease 0ms 1 forwards;
+  }
+  
+.in-right .info {
+    transform-origin: 100% 0%;
+    animation: in-right 300ms ease 0ms 1 forwards;
+  }
+  
+.in-bottom .info {
+    transform-origin: 50% 100%;
+    animation: in-bottom 300ms ease 0ms 1 forwards;
+  }
+  
+.in-left .info {
+    transform-origin: 0% 0%;
+    animation: in-left 300ms ease 0ms 1 forwards;
+  }
+  
+.out-top .info {
+    transform-origin: 50% 0%;
+    animation: out-top 300ms ease 0ms 1 forwards;
+}
+  
+.out-right .info {
+    transform-origin: 100% 50%;
+    animation: out-right 300ms ease 0ms 1 forwards;
+}
+  
+.out-bottom .info {
+    transform-origin: 50% 100%;
+    animation: out-bottom 300ms ease 0ms 1 forwards;
+} 
+.out-left .info {
+    transform-origin: 0% 0%;
+    animation: out-left 300ms ease 0ms 1 forwards;
+} 
+@keyframes in-top {
+    from { transform: rotate3d(-1, 0, 0, 90deg);}
+    to { transform: rotate3d(0, 0, 0, 0deg);}
+}
+@keyframes in-right {
+    from { transform: rotate3d(0, -1, 0, 90deg);}
+    to { transform: rotate3d(0, 0, 0, 0deg);}
+}
+@keyframes in-bottom {
+    from { transform: rotate3d(1, 0, 0, 90deg);}
+    to { transform: rotate3d(0, 0, 0, 0deg);}
+}
+@keyframes in-left {
+    from { transform: rotate3d(0, 1, 0, 90deg);}
+    to { transform: rotate3d(0, 0, 0, 0deg);}
+}
+@keyframes out-top {
+    from { transform: rotate3d(0, 0, 0, 0deg);}
+    to { transform: rotate3d(-1, 0, 0, 104deg);}
+}
+@keyframes out-right {
+    from { transform: rotate3d(0, 0, 0, 0deg);}
+    to { transform: rotate3d(0, -1, 0, 104deg);}
+}
+@keyframes out-bottom {
+    from { transform: rotate3d(0, 0, 0, 0deg);}
+    to { transform: rotate3d(1, 0, 0, 104deg);}
+}
+@keyframes out-left {
+    from { transform: rotate3d(0, 0, 0, 0deg);}
+    to { transform: rotate3d(0, 1, 0, 104deg);}
+}
